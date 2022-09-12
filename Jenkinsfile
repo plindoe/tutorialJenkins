@@ -34,6 +34,11 @@ pipeline {
                 sh 'sudo docker-compose build'
             }
         }
+        stage('Install Dependacies') {
+            steps {
+                sh 'python3 -m pip install -U pytest'
+            }
+        }
         stage('Unit Tests') {
             steps {
                 sh '''
