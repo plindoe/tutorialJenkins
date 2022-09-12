@@ -34,6 +34,14 @@ pipeline {
                 sh 'sudo docker-compose build'
             }
         }
+        stage('Unit Tests') {
+            steps {
+                sh '''
+                      python3 -m pytest ./converter/tests/test_unit.py
+                      python3 -m pytest ./prime/tests/test_unit.py
+                   '''
+            }
+        }
         stage('install apache') {
 
             steps {
