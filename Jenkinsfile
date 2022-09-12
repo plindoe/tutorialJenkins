@@ -36,7 +36,9 @@ pipeline {
         }
         stage('Install Dependacies') {
             steps {
-                sh 'python3 -m pip install -U pytest'
+                sh 'python3 -m pip install -U pytest
+                    python3 -m pip install -U flask
+                   '
             }
         }
         stage('Unit Tests') {
