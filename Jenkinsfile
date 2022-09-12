@@ -41,6 +41,7 @@ pipeline {
                       python3 -m pip install -U flask
                       python3 -m pip install -U flask_testing
                       python3 -m pip install -U requests
+                      pip install requests_mock
                       
                    '''
             }

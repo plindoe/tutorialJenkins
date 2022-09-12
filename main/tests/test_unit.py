@@ -29,7 +29,7 @@ class TestInit(TestCase):
 class TestMain(TestInit):
     
     def test_converter(self):
-        with requests_mock.Mocker() as m:
+        with requests_mock.mock() as m:
             m.post('http://converter:5001/date/1986')
 
             response = self.client.get(
@@ -38,7 +38,7 @@ class TestMain(TestInit):
             self.assertIn(b'Birth Year:', response.data)
 
     def test_prime(self):
-        with requests_mock.Mocker() as m:
+        with requests_mock.mock() as m:
             m.post('http://prime:5002/date/1986')
 
             response = self.client.get(
