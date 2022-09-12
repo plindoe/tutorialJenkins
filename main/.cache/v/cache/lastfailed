@@ -1,0 +1,4 @@
+{
+  "tests/test_unit.py::TestMain::test_converter": true,
+  "tests/test_unit.py::TestMain::test_prime": true
+}
