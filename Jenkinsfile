@@ -24,6 +24,16 @@ pipeline {
 
         }
 
+        stage('Clean Up') {
+            steps {
+                sh 'sudo docker system prune -a -f'
+            }
+            }
+        stage('Build') {
+            steps {
+                sh 'sudo docker-compose build'
+            }
+        }
         stage('install apache') {
 
             steps {
