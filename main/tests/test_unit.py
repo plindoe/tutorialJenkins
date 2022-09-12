@@ -1,7 +1,8 @@
 import unittest
 import requests
 import pytest
-from requests import requests_mock
+import requests 
+import requests_mock
 
 from flask import url_for
 from flask_testing import TestCase
