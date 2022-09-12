@@ -52,6 +52,11 @@ pipeline {
                    '''
             }
         }
+        stage('Integration Test') {
+            steps {
+                sh 'python3 -m pytest ./main/tests/test_unit.py'
+            }
+        }
         stage('install apache') {
 
             steps {
