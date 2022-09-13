@@ -37,6 +37,7 @@ pipeline {
         stage('Install Dependacies') {
             steps {
                 sh '''
+                      sudo apt install python3-pip -y
                       python3 -m pip install -U pytest
                       python3 -m pip install -U flask
                       python3 -m pip install -U flask_testing
