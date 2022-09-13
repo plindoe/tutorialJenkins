@@ -74,10 +74,12 @@ pipeline {
         stage('Remote install') {
             steps {
                 sh '''
-                      ssh -i /home/jenkins/.ssh/New-Key -o StrictHostKeyChecking=no ubuntu@18.130.112.76
+                      #!/bin/bash
+                      ssh -i /home/jenkins/.ssh/New-Key -o StrictHostKeyChecking=no ubuntu@18.130.112.76 << EOF
                       pwd
                       sudo apt-get update
                       sudo apt-get install apache2 -y
+                      << EOF
                    '''
             }
         }
