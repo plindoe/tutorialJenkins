@@ -73,7 +73,7 @@ pipeline {
         stage('Remote install') {
             steps {
                 sh '''
-                      ssh -i /home/jenkins/.ssh/New-Key -o StrictHostKeyCheckinh=no ubuntu@172.31.37.211
+                      ssh -i /home/jenkins/.ssh/New-Key -o StrictHostKeyChecking=no ubuntu@172.31.37.211
                       sudo apt update -y
                       
                    '''
