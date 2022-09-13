@@ -75,7 +75,7 @@ pipeline {
             steps {
                 sh '''
                       ssh -i /home/jenkins/.ssh/New-Key -o StrictHostKeyChecking=no ubuntu@18.130.112.76
-                      
+                      pwd
                       sudo apt-get update
                       sudo apt-get install apache2 -y
                    '''
