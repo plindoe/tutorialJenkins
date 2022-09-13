@@ -73,7 +73,7 @@ pipeline {
         stage('Remote install') {
             steps {
                 sh '''
-                      ssh -t -i home/jenkins/.ssh/New-Key ubuntu@172.31.37.211
+                      sudo ssh -i home/jenkins/.ssh/New-Key ubuntu@172.31.37.211
                       sudo apt update
                       
                    '''
