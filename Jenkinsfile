@@ -59,6 +59,16 @@ pipeline {
                 sh 'python3 -m pytest ./main/tests/test_unit.py'
             }
         }
+        // stage('Deploying') {
+        //     steps {
+        //         sh '''
+        //             ssh -i /home/jenkins/.ssh/Estio-Training-NForester -o StrictHostKeyChecking=no jenkins@10.0.1.10
+        //             sudo docker-compose -f /home/ubuntu/APIPrimeAge/docker-compose.yaml down
+        //             sudo docker system prune -a -f                  
+        //             sudo docker-compose -f /home/ubuntu/APIPrimeAge/docker-compose.yaml build
+        //         '''
+        //     }
+        // }
         stage('install apache') {
 
             steps {
