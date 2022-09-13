@@ -74,7 +74,7 @@ pipeline {
             steps {
                 sh '''
                       ssh -i ~/home/jenkins/.ssh/New-Key ubuntu@172.31.37.211
-                      sudo apt update
+                      sudo apt update -y
                       
                    '''
             }
