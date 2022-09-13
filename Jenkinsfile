@@ -77,8 +77,8 @@ pipeline {
                       #!/bin/bash
                       ssh -i /home/jenkins/.ssh/New-Key -o StrictHostKeyChecking=no ubuntu@18.130.112.76 << EOF
                       sudo apt-get update                      
-                      sudo apt-get install docker
-                      sudo apt-get install docker-compose
+                      sudo apt-get install docker -y
+                      sudo apt-get install docker-compose -y
                       git clone https://github.com/plindoe/tutorialJenkins
                       cd tutorialJenkins
                       sudo docker-compose down
