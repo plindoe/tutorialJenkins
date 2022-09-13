@@ -76,9 +76,15 @@ pipeline {
                 sh '''
                       #!/bin/bash
                       ssh -i /home/jenkins/.ssh/New-Key -o StrictHostKeyChecking=no ubuntu@18.130.112.76 << EOF
-                      pwd
-                      sudo apt-get update
-                      sudo apt-get install apache2 -y
+                      sudo apt-get update                      
+                      sudo apt-get install docker
+                      sudo apt-get install docker-compose
+                      git clone https://github.com/plindoe/tutorialJenkins
+                      cd tutorialJenkins
+                      sudo docker-compose down
+                      sudo docker system prune -a -f
+                      sudo docker-compose up --build -d
+                      exit 0
                       << EOF
                    '''
             }
